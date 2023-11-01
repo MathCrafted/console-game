@@ -239,6 +239,7 @@ void wizardAttack(int healthArray[6]) {
         int target;
         cout << "Which Orc is the Wizard throwing dart " << (thrown + 1) << " at?\n> ";
         cin >> target;
+        cin.ignore();
         if (!(target >= 1 && target <= 3)) {
 
             cout << "Please enter a number 1-3\n";
@@ -272,6 +273,7 @@ void fighterAttack(int healthArray[6], int armorArray[6]) {
     do {
         cout << "Which Orc is the fighter attacking?\n> ";
         cin >> targetIndex;
+        cin.ignore();
         if (targetIndex >= 1 && targetIndex <= 3) {
             break;
         }
@@ -310,6 +312,7 @@ void rogueAttack(int healthArray[6], int armorArray[6]) {
     do {
         cout << "Which Orc is the rogue attacking with his shortsword?\n> ";
         cin >> targetIndex;
+        cin.ignore();
         if (targetIndex >= 1 && targetIndex <= 3) {
             break;
         }
@@ -343,6 +346,7 @@ void rogueAttack(int healthArray[6], int armorArray[6]) {
     do {
         cout << "Which Orc is the rogue attacking with his dagger?\n> ";
         cin >> targetIndex;
+        cin.ignore();
         if (targetIndex >= 1 && targetIndex <= 3) {
             break;
         }
