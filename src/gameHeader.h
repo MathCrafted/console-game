@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <ctime>
 #include <limits.h>
+#include "dice.h"
 
 using namespace std;
 
