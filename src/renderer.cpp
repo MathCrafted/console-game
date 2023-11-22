@@ -9,6 +9,9 @@ class ScreenBuffer {
         ScreenBuffer() {
 
             this->layerCount = 5;
+            this->width = 16;
+            this->height = 9;
+            this->transparentChar = '\x00';
 
             for (int i = 0; i < this->layerCount; i++) {
 
@@ -22,11 +25,43 @@ class ScreenBuffer {
 
         ~ScreenBuffer() {
 
-            //
+            for (int i = 0; i < this->layerCount; i++) {
+
+                delete(screenBuffer[i]);
+
+            }
 
         }
 
         //Accessors//
+
+        //Height
+        unsigned int getHeight() {return this->height;}
+
+        void setHeight(unsigned int height) {
+
+            this->height = height;
+            for (int i = 0; i < this->layerCount; i++) {
+
+                screenBuffer[i]->setHeight(this->height);
+
+            }
+
+        }
+
+        //Width
+        unsigned int getWidth() {return this->width;}
+
+        void setWdith(unsigned int width) {
+
+            this->width = width;
+            for (int i = 0; i < layerCount; i++) {
+
+                screenBuffer[i]->setWidth(this->width);
+
+            }
+
+        }
 
     private:
 
